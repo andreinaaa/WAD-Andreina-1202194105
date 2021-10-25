@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                <form action="mybooking.php" method="GET">
+                <form action="mybooking.php" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="name" name="nama" value="Andreina_1202194105" readonly>

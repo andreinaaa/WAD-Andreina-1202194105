@@ -8,15 +8,15 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <?php
-    $name = isset($_GET['nama']) ? $_GET["nama"] : '';
-    $date = isset($_GET['date']) ? $_GET["date"] : '';
-    $time = isset($_GET['time']) ? $_GET["time"] : '';
-    $duration = isset($_GET['duration']) ? $_GET["duration"] : '';
-    $building = isset($_GET['building']) ? $_GET["building"] : '';
-    $phone = isset($_GET['phone']) ? $_GET["phone"] : '';
-    $services1 = isset($_GET['services1']) ? $_GET["services1"] : '';
-    $services2 = isset($_GET['services2']) ? $_GET["services2"] : '';
-    $services3 = isset($_GET['services3']) ? $_GET["services3"] : '';
+    $name = isset($GET['name']) ? $GET["name"] : '';
+    $date = isset($GET['date']) ? $GET["date"] : '';
+    $time = isset($GET['time']) ? $GET["time"] : '';
+    $duration = isset($GET['duration']) ? $GET["duration"] : '';
+    $building = isset($GET['building']) ? $GET["building"] : '';
+    $phone = isset($GET['phone']) ? $GET["phone"] : '';
+    $services1 = isset($GET['services1']) ? $GET["services1"] : '';
+    $services2 = isset($GET['services2']) ? $GET["services2"] : '';
+    $services3 = isset($GET['services3']) ? $GET["services3"] : '';
     ?>
 </head>
 
@@ -56,13 +56,13 @@
                             <th scope="col">Total Price</th>
                         </tr>
                         <tr>
-                            <th scope="row"><?php echo (rand(10,100)); ?></th>
-                            <td><?php echo $name?></td>
-                            <td><?php $dt = strtotime($date.' '.$time); echo date("d-m-Y H:i:s",$dt)  ?></td>
-                            <td><?php echo ""; ?></td>
-                            <td><?php echo $building; ?></td>
-                            <td><?php echo $phone; ?></td>
-                            <td><?php echo $services1;echo" ";echo $services2;echo" ";echo $services3 ?></td>
+                            <th scope="row"><?php  (rand(10,100)); ?></th>
+                            <td><?php  $name?></td>
+                            <td><?php $dt = strtotime($date.' '.$time);  date("d-m-Y H:i:s",$dt)  ?></td>
+                            <td><?php  ""; ?></td>
+                            <td><?php  $building; ?></td>
+                            <td><?php  $phone; ?></td>
+                            <td><?php  $services1;" "; $services2;" "; $services3 ?></td>
                         </tr> 
                     </table>
                 </div>
