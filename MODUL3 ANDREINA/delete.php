@@ -1,16 +1,16 @@
-<?php
+    <?php
 
-include('config.php');
+    include('config.php');
 
-if(isset($_POST['submit']));{
+    if(isset($_POST['submit']));{
 
-$idbuku = $_POST['id_buku'];
+    $idbuku = $_POST['id_buku'];
 
-$query = "DELETE FROM buku_table WHERE id_buku = '$idbuku'";
-// echo $query;
-$delete = mysqli_query($conn, $query);
+    $query = "DELETE buku_table WHERE id_buku = '$idbuku'";
+    // echo $query;
+    $delete = mysqli_query($conn, $query);
 
-if ($delete){
-    header('Location: andreina_home.php'); }
-}
-?>
+    if ($delete){
+        header('Location: andreina_home.php'); }
+    }
+    ?>
