@@ -23,7 +23,7 @@
         }
         
         $query = "INSERT INTO buku_table (judul_buku, penulis_buku, tahun_terbit, deskripsi,tag,bahasa,gambar) VALUE ('$judul_buku','$penulis_buku', '$tahun_terbit', '$deskripsi','$tag','$bahasa','$filename')";
-        $insert = mysqli_query($conn, $queyr);
+        $insert = mysqli_query($conn, $query);
 
         if ($insert){
             header('Location: andreina_home.php');

@@ -41,7 +41,7 @@
 
                 if (mysqli_num_rows($result) > 0) {
                     echo "<table>";
-                        while($row = mysqli_fetch_assoc($results)){?>
+                        while($row = mysqli_fetch_assoc($result)){?>
                             <? foreach( $sql as $row ) : ?>
                                 <div class="card col-12" style="width: 18rem;">
                                 <img src= file/<?= $row['gambar']?> class="card-img-top" alt="...">

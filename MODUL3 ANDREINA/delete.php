@@ -4,7 +4,7 @@
 
     if(isset($_POST['submit']));{
 
-    $idbuku = $_POST['id_buku'];
+    $idbuku = $_GET['id_buku'];
 
     $query = "DELETE buku_table WHERE id_buku = '$idbuku'";
     // echo $query;

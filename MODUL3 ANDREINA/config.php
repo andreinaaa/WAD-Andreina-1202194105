@@ -2,9 +2,9 @@
     $dbhost = "localhost";
     $dbuser = "root";
     $dbname = "modul3";
-    $dbpass = "";
+    $dbpass = "nugget";
 
-    $conn = mysqli_connect("localhost", "root", "", "modul3");
+    $conn = mysqli_connect("localhost", "root", "nugget", "modul3");
 
     if(!$conn) {
         echo "<script>
