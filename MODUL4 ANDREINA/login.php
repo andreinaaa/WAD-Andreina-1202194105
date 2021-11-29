@@ -9,7 +9,7 @@
 
         // echo $email;
 
-        $emailCek = 'SELECT * FROM users WHERE email=$email';
+        $emailCek = "SELECT * FROM users WHERE email='$email'";
         $select = mysqli_query($conn, $emailCek);
 
             if (mysqli_num_rows($select) == 1) {
