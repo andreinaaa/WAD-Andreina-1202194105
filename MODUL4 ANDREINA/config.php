@@ -1,10 +1,10 @@
     <?php
 
     if (isset($_SESSION)) {
-        session_start();
+        // session_start();
     }
 
-    $conn = mysqli_connect("localhost", "root", "nugget", "wad_modul4");
+    $conn = mysqli_connect("localhost", "root", "", "wad_modul4");
 
     if(!$conn) {
         echo "<script>

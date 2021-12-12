@@ -57,18 +57,59 @@
                         <th scope="col">Total Price</th>
                     </tr>
                     <tr>
-                        <th scope="row"><?php (rand(10, 100)); ?></th>
-                        <td><?php $name ?></td>
-                        <td><?php $dt = strtotime($date . ' ' . $time);
-                            date("d-m-Y H:i:s", $dt)  ?></td>
-                        <td><?php ""; ?></td>
-                        <td><?php $building; ?></td>
-                        <td><?php $phone; ?></td>
-                        <td><?php $services1;
-                            " ";
-                            $services2;
-                            " ";
-                            $services3 ?></td>
+                        <th scope="row"><?php echo (rand(10, 100)); ?></th>
+                        <td><?php echo $name ?></td>
+                        <td><?php $bookingtime = strtotime($date . " " . $time);
+                        echo date("d/m/Y H:i:s " ,$bookingtime) ?></td>
+                        <td><?php $checkouttime = strtotime($date . " " . $time . " +" . $duration . "hours");
+                        echo date("d/m/Y H:i:s " ,$checkouttime) ?></td>
+                        <td><?php 
+                            $duration_int = intval($duration);
+                            if ($building == "Nusantara Hall"){
+                                echo $building;
+                                // echo $duration_int;
+                                // var_dump(is_int($duration));
+                                $buildingprice = 2000 * $duration_int;
+                            };
+                            if ($building == "Garuda Hall"){
+                                echo $building;
+                                $buildingprice = 1000 * $duration_int;
+                            }
+                            if ($building == "Gedung Serba Guna"){
+                                echo $building;
+                                $buildingprice = 500 * $duration_int;
+                            }
+                             ?></td>
+                        <td><?php echo $phone; ?></td>
+                        <td><?php 
+                            if ($services1 != "") {
+                                echo $services1 . "<br>";
+                                $serviceprice1 = 700;
+                            } else {
+                                $serviceprice1 = 0;
+                            }
+                            if ($services2 != "") {
+                                echo $services2 . "<br>";
+                                $serviceprice2 = 450;
+                            }else {
+                                $serviceprice2 = 0;
+                            }
+                            if ($services3 != "") {
+                                echo $services3 . "<br>";
+                                $serviceprice3 = 250;
+                            }else {
+                                $serviceprice3 = 0;
+                            }
+                            if ($services1 == "" and $services2 == "" and $services3 == "") {
+                                echo "No Service";
+                            }
+                        ?></td>
+                        <td>
+                            <?php
+                            $TotalPrice = $buildingprice + $serviceprice1 + $serviceprice2 + $serviceprice3;
+                            echo "$" . number_format($TotalPrice) ;
+                            ?>
+                        </td>
                     </tr>
                 </table>
             </div>

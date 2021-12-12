@@ -49,7 +49,7 @@
                         <li class="list-group-item" style="color: green;">Covid-19 Health Protocol</li>
                     </ul>
                     <div class="card-body">
-                        <a href="booking.php" class="btn btn-primary">Book Now</a>
+                        <a href="booking.php?id=1" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                     <li class="list-group-item" style="color: green;">Covid-19 Health Protocol</li>
                 </ul>
                 <div class="card-body">
-                    <a href="booking.php" class="btn btn-primary">Book Now</a>
+                    <a href="booking.php?id=2" class="btn btn-primary">Book Now</a>
                 </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                         <li class="list-group-item" style="color: green;">Covid-19 Health Protocol</li>
                     </ul>
                     <div class="card-body">
-                    <a href="booking.php" class="btn btn-primary">Book Now</a>
+                    <a href="booking.php?id=3" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
             </div>

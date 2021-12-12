@@ -18,29 +18,32 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Profile</title>
 
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"></link>
+
         </head>
 
         <body style="margin: 0; padding: 0; box-sizing: border-box; padding-top: 5%;">
             <section>
                 <header>
-                    <nav class="navbar fixed-top navbar-light" style="background-color:#77BFC7">
+                <nav class="navbar fixed-top navbar-light" style="background-color:#77BFC7">
                         <div class="container">
                             <ul class="nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index_v2.php" style="color: black; ">EAD Travel</a>
-                                </li>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                                <li class="nav" style="float: right; margin-left:870px;">
+                                </li>      
+                                <li class="nav" style="float: right; margin-left:800px;">
                                     <a href="booking.php" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
                                 </li>
-                                <li class="nav" style="float: right; margin-left: 10px;">
-                                    <a href="#" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i>user</a>
+                                <li class="dropdown">
+                                  <a class="dropdown-toggle" style="float: right; margin-left: 20px; margin-top: 7px; color: black;" data-bs-toggle="dropdown" href="#"> user
+                                  <span class="caret"></span></a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="profile.php" style="margin-left: 10px;" >Profile</a></li>
+                                    <hr>
+                                    <li><a href="#" style="margin-left: 10px;" >Logout</a></li>
+                                  </ul>
                                 </li>
                             </ul>
                         </div>
@@ -52,49 +55,27 @@
                 <div class="col-md-12" style="max-width: 700px;">
                 <div class="card-body">
                     <div class="container" style="margin-left: auto; padding: 5px; justify-content: center;">                     
-                        <form action="update.php" method="POST" enctype="multipart/form-data">
-                            <h4 style="text-align: center; font-weight: bold;"> Profile </h4>
+                    <form action = "update.php" method="POST">
+                        <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" value = "<?php echo $email?>" readonly>
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" 
+                            value = "<?php echo $nama?>">
+                            <label for="no_hp" class="form-label">No. Handphone</label>
+                            <input type="number" class="form-control" id="no_hp" name="no_hp" 
+                            value = "<?php echo $no_hp?>"">
                             <hr>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email_register" name="email_register" placeholder="Masukkan Alamat E-Mail" dissable>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="nama" class="form-label">Nama</label>
-                                <input type="text" class="form-control" id="nama_register" name="nama_register" placeholder="Masukkan Nama Lengkap">
-                            </div>
-        
-                            <div class="mb-3">
-                                <label for="nohp" class="form-label">Nomor Handphone</label>
-                                <input type="number" class="form-control" id="nohp_register" name="nohp_register" placeholder="Masukkan Nomor Handphone">
-                            </div>
-
-                            <hr>
-                                    
-                            <div class="mb-3">
-                                <label for="sandi" class="form-label">Kata Sandi</label>
-                                <input type="password" class="form-control" id="sandi_register" name="sandi_register" placeholder="Masukkan Kata Sandi">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="konfirmasisandi" class="form-label">Konfirmasi Kata Sandi</label>
-                                <input type="password" class="form-control" id="konfirmasisandi_register" name="konfirmasisandi_register" placeholder="Konfirmasi Kata Sandi Anda">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="warnanavbar" class="form-label">Warna Navbar</label>
-                                <input type="text" class="form-control" id="konfirmasisandi_register" name="konfirmasisandi_register" value="Blue Ocean">
-                            </div>
-                                    
-                            <button type="button" name="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit-databuku-modal">
-                            Simpan
-                            </button>
-
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#deletemodal">
-                            Cancel
-                            </button>
-                        </form>
+                            <label for="sandi" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="no_hp" name="no_hp" 
+                            value = "<?php echo $password?>"">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" 
+                            value = "<?php echo $confirmPassword?>"">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" name = "submit" class="btn btn-success" data-bs-dismiss="modal">Sunting</button>
+                            <input type="hidden" id="id_buku" name="id_buku" value="<?php echo $idbuku ?>">    
+                        </div>
+                    </form>
                     </div>
                 </div>
             </div>

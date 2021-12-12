@@ -8,6 +8,19 @@
         <title>Booking</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <?php
+        // $pilih = $_GET['id'];
+        $pilih = isset($_GET['id']) ? $_GET["id"] : '';
+        if ($pilih == 1){
+            $gambar = "nusantara.jpeg";
+        } elseif ($pilih == 2) {
+            $gambar = "garuda.JPEG";
+        } elseif ($pilih == 3) {
+            $gambar = "gsg.jpeg";
+        } else {
+            $gambar = "nusantara.jpeg";
+        }
+    ?>
     </head>
 
     <body style="margin: 0; padding: 0; box-sizing: border-box; padding-top: 5%;">
@@ -37,8 +50,7 @@
         <div class="card p-5 m-auto mt-3 mb-3" style="max-width: 1155px;">
             <div class="row g-2">
                 <div class="col-md-4">
-
-                    <img src="nusantara.jpeg" class="img-fluid rounded-start" alt="..." style="justify-content:center;">
+                    <img src=<?php echo $gambar ?> class="img-fluid rounded-start" alt="..." style="justify-content:center;">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -57,14 +69,14 @@
                             </div>
                             <div class="mb-3">
                                 <label for="duration" class="form-label">Duration (Hrs)</label>
-                                <input type="number" class="form-control" id="duration" name="duration">
+                                <input type="number" class="form-control" id="duration" name="duration" value = "1" >
                             </div>
                             <div class="mb-3">
                                 <label for="building" class="form-label">Building Type</label><br>
                                 <select name="building" class="form-control">
-                                    <option value="Nusantara Hall"> Nusantara Hall</option>
-                                    <option value="Garuda Hall">Garuda Hall</option>
-                                    <option value="Gedung Serba Guna">Gedung Serba Guna</Option>
+                                    <option value="Nusantara Hall" <?php if ($pilih == 1) {echo "selected";} ?>> Nusantara Hall</option>
+                                    <option value="Garuda Hall" <?php if ($pilih == 2) {echo "selected";} ?>>Garuda Hall</option>
+                                    <option value="Gedung Serba Guna" <?php if ($pilih == 3) {echo "selected";} ?>>Gedung Serba Guna</Option>
                                 </select>
                             </div>
                             <div class="mb-3">
