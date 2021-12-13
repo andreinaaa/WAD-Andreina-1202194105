@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Vaccines</title>
+          <title>Patients</title>
         
           <link rel="stylesheet" type="text/css" href="home.css">
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -39,35 +39,41 @@
             <div class="container" style="margin-left: auto; margin-top: 100px; padding: 5px; text-align: center;">
                 <table class="table table-primary">
                     
-                    @if (count($daftar_vaccines) > 0)
-                        <h1>List Vaccines</h1>
+                    @if (count($registrasi) > 0)
+                        <h1>List Patient</h1>
                         <br>
-                        <a href="daftar" class="btn btn-primary" style="float: left;">Add Vaccine</a>
+                        <a href="daftar_pasien" class="btn btn-primary" style="float: left;">Register Patient</a>
                         <br>
                         <br>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Vaccine</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">NIK</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">No. HP</th>
                             <th scope="col">Action</th>
                         </tr>
-                        @foreach( $daftar_vaccines as $x )
+                        @foreach( $registrasi as $w )
                             <tr>
-                                <th scope="col">{{$x->id}}</th>
-                                <th scope="col">{{$x->name}}</th>
-                                <th scope="col">{{$x->price}}</th>
+                                <th scope="col">{{$w->id}}</th>
+                                <th scope="col">{{$w->nama_vaksin}}</th>
+                                <th scope="col">{{$w->name}}</th>
+                                <th scope="col">{{$w->nik}}</th>
+                                <th scope="col">{{$w->alamat}}</th>
+                                <th scope="col">{{$w->no_hp}}</th>
                                 <th scope="col">
-                                    <a href="/vaccines/edit/{{ $x->id }}" class="btn btn-success"> Edit </a>
-                                    <a href="/vaccines/delete/{{ $x->id }}" class="btn btn-danger"> Delete </a>
+                                    <a href="/patient/updatePasien/{{ $w->id }}" class="btn btn-success"> Edit </a>
+                                    <a href="/patient/delete/{{ $w->id }}" class="btn btn-danger"> Delete </a>
                                 </th>
-                                <!-- <th>{{count($daftar_vaccines)}}</th> -->
+            
                             </tr>
                         @endforeach
 
                     @else
                         <h3> There is no data. </h3>
                         <br>
-                        <a href="daftar" class="btn btn-primary">Add Vaccine</a>
+                        <a href="daftar_pasien" class="btn btn-primary">Register Patient</a>
                     @endif
                 </table>
 

@@ -35,48 +35,53 @@
             </header>
         </section>
 
-        <section>
-            <div id="Section3">
-                <div class="jumbotron jumbotron-fluid" style="background-color: #fff;">
-                    <h1 style="text-align: center;">Vaccine List</h1>
-                    <br>
-                    <div class="container">
-                        <div class="card-deck">
-                            <div class="card" style="width: 300px;">
-                                <img src="/file/astra.jpg" alt="antigen.jpeg">
-                                <div class="card-body">
-                                    <h5 class="card-title">AstraZeneca 2</h5>
-                                    <p> Rp 20.000</p>
-                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos? </p>
-                                </div>
-                                <a href="/patients/daftar_pasien" class="btn btn-primary">Vaccine Now</a>  
-                            </div>
-                            
-                            <div class="card" style="width: 300px;">
-                                <img src="/file/sinovac.jpg" alt="pcr.jpeg">
-                                <div class="card-body">  
-                                    <h5 class="card-title">Sinovac</h5>
-                                    <p> Rp 200.000</p>
-                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, fugiat! </p>
-                                </div>
-                                <a href="daftar_pasien" class="btn btn-primary">Vaccine Now</a>
-                            </div>
-
-                            <div class="card" style="width: 300px;">
-                                <img src="/file/moderna.jpg" alt="pcr.jpeg">
-                                <div class="card-body">  
-                                    <h5 class="card-title">Moderna</h5>
-                                    <p> Rp 200.000</p>
-                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, fugiat! </p>
-                                </div>
-                                <a href="daftar_pasien" class="btn btn-primary">Vaccine Now</a>
-                            </div>
+        <div class="card p-5 m-auto mt-3 mb-3" style="max-width: 700px; margin-top: 100px; margin-bottom: 50px;">
+            <div class="col-md-12" style="max-width: 700px;">
+            <div class="card-body">
+                <div class="container" style="margin-left: auto; padding: 5px; justify-content: center;">
+                @foreach($data_pasien as $a)
+                    <form action="/pasien_update" method="POST" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        <h4 style="text-align: center; font-weight: bold;"> Update {{ $a->name }} Vaccine </h4>
+                        <input type="hidden" name="id" value="{{$a->id}}">
+                        <div class="mb-3">
+                            <label for="vaccine_id" class="form-label">Vaccine ID</label>
+                            <input type="text" class="form-control" id="vaccine_id" name="vaccine_id" value="{{ $a->vaccine_id }}" readonly>
                         </div>
-                    </div>
-                </div>    
-            </div>          
-        </section>
+                        
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Patient Name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ $a->name }}">
+                        </div>
 
+                        <div class="mb-3">
+                            <label for="nik" class="form-label">NIK</label>
+                            <input type="number" class="form-control" id="nik" name="nik" value="{{ $a->nik }}">
+                        </div>
+                                
+                        <div class="mb-3">
+                            <label for="alamat" class="form-label">Alamat</label>
+                            <textarea class="form-control" id="alamat" name="alamat">{{ $a->alamat }}</textarea>
+                        </div>
+                                
+                        <div class="mb-3">
+                            <label for="gambar" class="form-label">KTP</label>
+                            <input type="file" name="image_ktp" id="image_ktp">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="no_hp" class="form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="no_hp" name="no_hp" value="{{ $a->no_hp }}">
+                        </div>
+                                
+                        <input type="submit" name="submit" value = "Update" style="width:560px; background-color:#306EFF; height:40px; color: white;">
+                    </form>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+        
         <footer data-bs-toggle="modal" data-bs-target="#namamodal">
             <div class="fixed-bottom" style="background-color:#fff; text-align: center;">
                 <div class="row">

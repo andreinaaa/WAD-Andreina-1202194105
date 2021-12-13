@@ -38,42 +38,44 @@
         <div class="card p-5 m-auto mt-3 mb-3" style="max-width: 700px; margin-top: 100px; margin-bottom: 50px;">
             <div class="col-md-12" style="max-width: 700px;">
             <div class="card-body">
-                <div class="container" style="margin-left: auto; padding: 5px; justify-content: center;">                     
-                    <form action="registrasi" method="POST" enctype="multipart/form-data">
+                <div class="container" style="margin-left: auto; padding: 5px; justify-content: center;">
+                @foreach($jenisVaksin as $a)
+                    <form action="/regisPasien" method="POST" enctype="multipart/form-data">
                         {{csrf_field()}}
-                        <h4 style="text-align: center; font-weight: bold;"> Register Vaccine </h4>
+                        <h4 style="text-align: center; font-weight: bold;"> Register {{ $a->name }} Vaccine </h4>
                         <div class="mb-3">
-                            <label for="judul" class="form-label">Vaccine ID</label>
-                            <input type="text" class="form-control" id="judul_buku" name="judul_buku">
+                            <label for="vaccine_id" class="form-label">Vaccine ID</label>
+                            <input type="text" class="form-control" id="vaccine_id" name="vaccine_id" value="{{ $a->id }}" readonly>
                         </div>
                         
                         <div class="mb-3">
-                            <label for="judul" class="form-label">Patient Name</label>
-                            <input type="text" class="form-control" id="judul_buku" name="judul_buku">
+                            <label for="name" class="form-label">Patient Name</label>
+                            <input type="text" class="form-control" id="name" name="name">
                         </div>
 
                         <div class="mb-3">
-                            <label for="judul" class="form-label">NIK</label>
-                            <input type="number" class="form-control" id="judul_buku" name="judul_buku">
+                            <label for="nik" class="form-label">NIK</label>
+                            <input type="number" class="form-control" id="nik" name="nik">
                         </div>
                                 
                         <div class="mb-3">
-                            <label for="desc" class="form-label">Alamat</label>
-                            <textarea class="form-control" id="deskripsi" name="deskripsi"></textarea>
+                            <label for="alamat" class="form-label">Alamat</label>
+                            <textarea class="form-control" id="alamat" name="alamat"></textarea>
                         </div>
                                 
                         <div class="mb-3">
-                            <label for="gambar" class="form-label">Image</label>
-                            <input type="file" name="file" id="file">
+                            <label for="gambar" class="form-label">KTP</label>
+                            <input type="file" name="image_ktp" id="image_ktp">
                         </div>
 
                         <div class="mb-3">
-                            <label for="judul" class="form-label">Phone Number</label>
-                            <input type="number" class="form-control" id="judul_buku" name="judul_buku">
+                            <label for="no_hp" class="form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="no_hp" name="no_hp">
                         </div>
                                 
-                        <a href="daftar" class="btn btn-primary">Vaccine Now</a>
+                        <input type="submit" name="submit" value = "Submit" style="width:560px; background-color:#306EFF; height:40px; color: white;">
                     </form>
+                    @endforeach
                 </div>
             </div>
         </div>
